@@ -71,6 +71,19 @@ public class EntregaServiceImpl implements EntregaService {
 	}
 
 	@Override
+	public void SolicitaEntregaCliente(Integer idPedido, Integer idCliente) {
+
+		EntregaJpa entregaJpa = new EntregaJpa();
+
+		entregaJpa.idCliente = idCliente;
+		entregaJpa.idPedido = idPedido;
+		entregaJpa.idStatus = 1;
+
+		repository.save(entregaJpa);
+
+	}
+
+	@Override
 	public EntregaRecords CriarEntrega(EntregaRecords objCriarEntrega) {
 		EntregaJpa entregaJpa = new EntregaJpa();
 

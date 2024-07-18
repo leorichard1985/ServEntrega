@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.1</version>
+		<version>3.1.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fiap</groupId>
@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.4</spring-cloud.version>
 	</properties>
 	
 	<dependencies>
@@ -81,8 +82,25 @@
 	      <artifactId>mssql-jdbc</artifactId>
 	      <scope>runtime</scope>
 	    </dependency>
+
+		<dependency>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-function-web</artifactId>
+	    </dependency>	    
 	   
 	</dependencies>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>	
 
 	<build>
 		<plugins>

@@ -13,6 +13,8 @@ public interface EntregaService {
 	EntregaRecords CriarEntrega(EntregaRecords objCriarEntrega);
 	
 	EntregaRecords AtualizarEntrega(Integer idEntrega, Integer idStatus);
+	
+	void SolicitaEntregaCliente(Integer	idPedido,Integer idCliente);
 
 
 }
